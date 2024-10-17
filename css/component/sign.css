@@ -1,0 +1,222 @@
+@import url('../layout/layout.css');
+
+.formContainer {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: -150px;
+        top: -150px;
+        width: 500px;
+        height: 500px;
+        background-color: indianred;
+        clip-path: polygon(49% 0, 0% 100%, 100% 53%);
+        z-index: -1;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -150px;
+        bottom: -150px;
+        width: 500px;
+        height: 500px;
+        background-color: gold;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        z-index: 1;
+    }
+
+    .container {
+        height: 100%;
+    
+        .formContent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: nowrap; */
+            position: relative;
+            background-color: rgb(255, 255, 255, .8);
+            width: 100%;
+            z-index: 10;
+        
+            .signInBox,
+            .signUpBox {
+                position: absolute;
+                width: fit-content;
+                height: 480px;
+                box-shadow: var(--boxShadow);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transform: translateX(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                -webkit-transform: translateX(20px);
+                -moz-transform: translateX(20px);
+                -ms-transform: translateX(20px);
+                -o-transform: translateX(20px);
+                -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
+                -moz-transition: opacity 0.5s ease, transform 0.5s ease;
+                -ms-transition: opacity 0.5s ease, transform 0.5s ease;
+                -o-transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+        
+            .signInBox.active,
+            .signUpBox.active {
+                opacity: 1;
+                transform: translateX(0);
+                display: flex;
+                -webkit-transform: translateX(0);
+                -moz-transform: translateX(0);
+                -ms-transform: translateX(0);
+                -o-transform: translateX(0);
+                z-index: 1;
+            }
+
+            form {
+                text-align: center; 
+                padding: 20px;
+            
+                .title {
+                    color: var(--greenColor);
+                    margin-bottom: 20px;
+                }
+            
+                .social {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-bottom: 15px;
+                
+                    i {
+                        cursor: pointer;
+                        width: 20px;
+                        height: 20px;
+                        padding: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #0000006f;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                    }
+                }
+            
+                .paragraph {
+                    color: var(--blackColor);
+                    opacity: .5;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                }
+            
+                .inputField {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    width: 70%;
+                    margin: 0 auto;
+                    border: 1px solid rgb(0, 0, 0, .2);
+                    margin-bottom: 15px;
+                    padding: 5px 15px;
+                    border-radius: 7px;
+                    -webkit-border-radius: 7px;
+                    -moz-border-radius: 7px;
+                    -ms-border-radius: 7px;
+                    -o-border-radius: 7px;
+                
+                    input {
+                        border: none !important;
+                        background-color: transparent !important;
+                        color: var(--blackColor) !important;
+                    
+                        &:-webkit-autofill,
+                        &:-webkit-autofill:focus {
+                            transition: background-color 0s 600000s, color 0s 600000s !important;
+                        }
+                    
+                        &:focus {
+                            border: none !important;
+                            box-shadow: none !important;
+                            background-color: transparent !important;
+                        }
+                    
+                        &::placeholder {
+                            font-weight: 700;
+                            transition: all .5s;
+                            -webkit-transition: all .5s;
+                            -moz-transition: all .5s;
+                            -ms-transition: all .5s;
+                            -o-transition: all .5s;
+                        }
+                    
+                        &:focus::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+            
+                .forgetPassword {
+                    text-transform: capitalize;
+                    color: var(--blackColor);
+                    font-weight: 700;
+                }
+            
+                .btns {
+                    margin-block: 15px;
+                }
+            }
+        
+            .signDesign {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 20px;
+                height: 100%;
+                background: rgb(34,193,195);
+                background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,253,118,1) 100%);
+            
+                .box {
+                
+                    .title {
+                        color: var(--whiteColor);
+                    }
+                
+                    .paragraph {
+                        color: rgb(255, 255, 255, .8);
+                        margin-block: 15px;
+                    }
+                
+                    .signBtn {
+                        border: 1px solid var(--whiteColor) !important;
+                        background-color: transparent;
+                    }
+                }
+            }
+        
+            /* .signUpBox {
+                display: none;
+            } */
+        }
+    }
+}
+
+/* Media Query */
+@media (max-width: 450px) {
+    .signInBox,
+    .signUpBox {
+        background-color: var(--whiteColor) !important;
+        height: 650px !important;
+    }
+}

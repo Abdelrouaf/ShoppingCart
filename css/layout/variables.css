@@ -1,0 +1,8 @@
+/* Variables */
+:root {
+    --blackColor: #000;
+    --darkBlack: #343a40;
+    --whiteColor: #fff;
+    --greenColor: darkcyan;
+    --boxShadow: 0 0 40px #000;
+}
