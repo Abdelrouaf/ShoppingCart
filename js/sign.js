@@ -1,3 +1,6 @@
+const isGitHubPages = window.location.hostname === "abdelrouaf.github.io";
+const path = isGitHubPages ? "/ShoppingCart/main.html" : "../main.html";
+
 const toastBox = document.getElementById('toastBox')
 
 const addedMsg = '<i class="fa-solid fa-circle-check"></i> Added to cart successfully'
@@ -164,7 +167,7 @@ signInForm.addEventListener('submit', (e) => {
             localStorage.setItem('loggedInUser', JSON.stringify(userExist));
             localStorage.setItem('userIn', true)
             setTimeout(() => {
-                window.location.href = '../pages/main.html';
+                window.location.href = path;
             }, 2000);
         } else {
             showToast(incorrectSign)
