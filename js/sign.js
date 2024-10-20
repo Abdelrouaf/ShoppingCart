@@ -167,7 +167,7 @@ signInForm.addEventListener('submit', (e) => {
             localStorage.setItem('loggedInUser', JSON.stringify(userExist));
             localStorage.setItem('userIn', true)
             setTimeout(() => {
-                window.location.href = path;
+                window.location.href = 'main.html';
             }, 2000);
         } else {
             showToast(incorrectSign)

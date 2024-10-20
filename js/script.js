@@ -3,7 +3,7 @@ const path = isGitHubPages ? "/ShoppingCart/" : "../index.html";
 
 function checkUserIn() {
     if ( localStorage.getItem('userIn') === 'false' || localStorage.getItem('userIn') === null ) {
-        window.location.href = path;
+        window.location.href = 'index.html';
     }
 }
 checkUserIn();
@@ -35,7 +35,7 @@ logout.addEventListener('click', (e) => {
     localStorage.removeItem('userIn');
     showToast('<i class="fa-solid fa-circle-check"></i> Logging out')
     setTimeout(() => {
-        window.location.href = path;
+        window.location.href = 'index.html';
     }, 3000);
 
 })
